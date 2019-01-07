@@ -1,9 +1,9 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return '<h1>Hello, World!</h1>'
+    return redirect(url_for("cat"))
 
 @app.route("/cat")
 def cat():
